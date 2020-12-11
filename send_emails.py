@@ -1,22 +1,19 @@
-from bs4 import BeautifulSoup
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 import time
-import pandas as pd
 
 urlPitt = "https://my.pitt.edu"
 
 
 # login pitt_email
 def login_pitt():
-    '''
+    """
     INPUT: user credentials
 
     OUTPUT: driver
 
     logs in to Pitt
 
-    '''
+    """
     email = input("Type Pitt Email: ")
     passw = input("Type password: ")
     driver = webdriver.Chrome()
@@ -41,27 +38,35 @@ def login_pitt():
     print('PLEASE CONFIRM IN BROWSER')
     key_pressed = input('Press ENTER to continue: ')
 
-    return (driver)
+    return driver
 
 
 def open_outlook(driver):
-    '''
-    INPUT:driver
+    """
 
-    OUTPUT: driver
-
-    '''
+    :param driver: webdriver object
+    :return: driver
+    """
 
     time.sleep(5)
     email_btn = driver.find_element_by_xpath(
         "/html/body/div[1]/div[5]/div[3]/div/div[2]/div[2]/div[3]/div[1]/div/div/a")
     email_btn.click()
+    time.sleep(5)
     driver.switch_to.window(driver.window_handles[1])
 
     return driver
 
 
 def new_message(driver, email, template, subject):
+    """
+
+    :param driver:
+    :param email:
+    :param template:
+    :param subject:
+    :return:
+    """
     new_mess_btn = driver.find_element_by_css_selector('#app > div > div._3KAPMPOz8KsW24ooeUflK2 > div._2jR8Yc0t2ByBbcz_HIGqZ4 > div > div._25oA4qBLP_b6P080cw5s2H.css-43 > div._1waWmu4XtQsneHiFwpHx7b > div.qtRcagoPZ5dw3xsr114ze > button')
     new_mess_btn.click()
 
@@ -75,7 +80,7 @@ def new_message(driver, email, template, subject):
     subject_input.send_keys(subject)
 
     send_btn = driver.find_element_by_xpath('/html/body/div[2]/div/div[2]/div[1]/div/div[3]/div[2]/div/div[3]/div[1]/div/div/div/div[1]/div[3]/div[2]/div[1]/div/span/button[1]')
+    time.sleep(30)
     send_btn.click()
 
     return driver
-

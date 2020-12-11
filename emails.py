@@ -10,7 +10,7 @@ def create_template(part_name, id_code):
     """
 
     key_dict = {
-        'participant_name': part_name,
+        'participant_name': str(part_name),
         'lab_name': 'Personality Processes and Outcomes Laboratory',
         'id_code': 'AGCW' + str(id_code),
         'my_name': 'Madeline Kehl'
@@ -48,11 +48,12 @@ def full_path(df):
     :return: df of emales and template
     """
     results = pd.DataFrame(columns=['email', 'template'])
-    for j, row in enumerate(df.iterrows()):
+    for j, row in df.iterrows():
+        print(row['ID'])
         id_code, template = create_template(row['Name'], row['ID'])
         email = row['E-mail']
-        results[j]['email'] = email
-        results[j]['template'] = template
+        results.loc[j, 'email'] = email
+        results.loc[j, 'template'] = template
 
     return results
 
