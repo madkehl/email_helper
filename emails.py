@@ -16,8 +16,7 @@ def create_template(part_name, id_code):
         'my_name': 'Madeline Kehl'
     }
 
-    template = """
-    Dear {participant_name},
+    template = """Dear {participant_name},
     My name is {my_name}, from the {lab_name} at the University of Pittsburgh. You participated in our study Mental Health and Coping During COVID-19. When you participated in that study, you agreed to be contacted for participation in follow up surveys for this study. We are reaching out now to ask you to complete a follow up survey for this study.
     Coronavirus/COVID-19 is a stressful experience that is different from anything that most of us have experienced in our lifetime. As researchers, we want to understand the effects of the current crisis on mental health. To ask that question, we need to reach out to people (like you) who participated in research related to mental health before COVID-19, so that we can see how mental health has changed from then to now.
     One of the most important parts of answering this question is recruiting a very large and diverse sample of participants who already answered questions about their mental health in the past (before COVID-19). Because of this, we have joined forces with research labs across the United States and abroad to recruit a combined sample of as many as 10,000 people who previously completed studies in our labs and are willing to answer follow-up questions about their mental health now. This will be the first and largest mental health dataset of its kind.

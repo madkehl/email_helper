@@ -2,7 +2,7 @@ from emails import full_path
 import pandas as pd
 from send_emails import login_pitt, open_outlook, new_message
 
-ids = pd.read_csv('/users/madke/downloads/AAPECS Recontacts.csv')
+ids = pd.read_csv('/users/madke/downloads/AAPECS Recontacts 3.csv')
 subject = 'Mental Health and Covid-19 Follow-up'
 
 

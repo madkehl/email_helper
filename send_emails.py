@@ -69,7 +69,7 @@ def new_message(driver, email, template, subject):
     """
     new_mess_btn = driver.find_element_by_css_selector('#app > div > div._3KAPMPOz8KsW24ooeUflK2 > div._2jR8Yc0t2ByBbcz_HIGqZ4 > div > div._25oA4qBLP_b6P080cw5s2H.css-43 > div._1waWmu4XtQsneHiFwpHx7b > div.qtRcagoPZ5dw3xsr114ze > button')
     new_mess_btn.click()
-
+    time.sleep(5)
     email_input = driver.find_element_by_css_selector('#app > div > div._3KAPMPOz8KsW24ooeUflK2 > div._2jR8Yc0t2ByBbcz_HIGqZ4 > div > div._3mBjlqTqXMUiRuuWRKCPtX.css-42 > div._1jw6v9zFEgnOiXShpU1qqM > div > div.mm4nCLKbIRtx5HvuorDWT > div._1QDTZfBsizkS8O4Jej5a3A > div > div > div > div._29NreFcQ3QoBPNO3rKXKB0 > div._3Yr_hO7j5doGUkhrRiP6uY > div:nth-child(1) > div:nth-child(1) > div._31eKqae41uP_KBAvjXjCLQ > div > div > div > div > div.ms-FocusZone.css-57 > div > div > input')
     email_input.send_keys(email)
 
@@ -80,7 +80,7 @@ def new_message(driver, email, template, subject):
     subject_input.send_keys(subject)
 
     send_btn = driver.find_element_by_xpath('/html/body/div[2]/div/div[2]/div[1]/div/div[3]/div[2]/div/div[3]/div[1]/div/div/div/div[1]/div[3]/div[2]/div[1]/div/span/button[1]')
-    time.sleep(30)
+    time.sleep(3)
     send_btn.click()
 
     return driver
