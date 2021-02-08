@@ -2,10 +2,10 @@ from emails import full_path
 import pandas as pd
 from send_emails import login_pitt, open_outlook, new_message
 
-id_df = pd.read_csv('/users/madke/downloads/AAPECS Recontacts - Sheet3.csv')
+id_df = pd.read_csv('/users/madke/downloads/AAPECS Recontacts - Sheet3 (1).csv')
 full_info = pd.read_csv('/users/madke/downloads/AAPECS Recontacts - Sheet1 (1).csv')
 ids = id_df.merge(full_info, left_on='ID', right_on='ID', how='left')
-
+print(ids.head())
 subject = 'Mental Health and Covid-19 Follow-up'
 
 
